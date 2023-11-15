@@ -21,8 +21,11 @@ void loop()
     }
     dura=pulseIn(ECHO[i], HIGH);
     dist=dura/58.2;
-      Serial.print("US"+cero+String(i)+":");
-    Serial.print(dist);
-    Serial.println("cm");
+    String ceroo="0";
+    if(dist>9){
+      ceroo="";
+    }
+      Serial.print("US"+cero+String(i)+":"+ceroo);
+    Serial.println(dist);
   }
 }
